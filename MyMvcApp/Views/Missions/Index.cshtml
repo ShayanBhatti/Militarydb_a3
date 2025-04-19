@@ -1,7 +1,7 @@
 @model IEnumerable<MyMvcApp.Models.Mission>
 
 @{
-    ViewData["Title"] = "Military Missions";
+    ViewData["Title"] = "Missions";
 }
 
 <div class="card">
@@ -20,17 +20,17 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var mission in Model)
+                @foreach (var item in Model)
                 {
                     <tr>
-                        <td>@mission.Missioncode</td>
-                        <td>@mission.Missiondate?.ToString("d")</td>
-                        <td>@mission.Personnel?.Count ?? 0</td>
+                        <td>@item.Missioncode</td>
+                        <td>@(item.Missiondate?.ToLocalTime().ToString("d"))</td>
+                        <td>@item.Personnel?.Count</td>
                         <td>
                             <div class="btn-group">
-                                <a asp-action="Edit" asp-route-id="@mission.Missioncode" class="btn btn-warning btn-sm">Edit</a>
-                                <a asp-action="Details" asp-route-id="@mission.Missioncode" class="btn btn-info btn-sm">Details</a>
-                                <a asp-action="Delete" asp-route-id="@mission.Missioncode" class="btn btn-danger btn-sm">Delete</a>
+                                <a asp-action="Edit" asp-route-id="@item.Missioncode" class="btn btn-warning btn-sm">Edit</a>
+                                <a asp-action="Details" asp-route-id="@item.Missioncode" class="btn btn-info btn-sm">Details</a>
+                                <a asp-action="Delete" asp-route-id="@item.Missioncode" class="btn btn-danger btn-sm">Delete</a>
                             </div>
                         </td>
                     </tr>

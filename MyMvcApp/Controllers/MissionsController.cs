@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MyMvcApp.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using MyMvcApp.Data;
+using MyMvcApp.Models;
 
 namespace MyMvcApp.Controllers
 {
@@ -14,7 +15,6 @@ namespace MyMvcApp.Controllers
             _context = context;
         }
 
-        // GET: Missions
         public async Task<IActionResult> Index()
         {
             return View(await _context.Mission
@@ -22,45 +22,32 @@ namespace MyMvcApp.Controllers
                 .ToListAsync());
         }
 
-        // GET: Missions/Details/5
-        public async Task<IActionResult> Details(string id)
+        public async Task<IActionResult> Create()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var mission = await _context.Mission
-                .FirstOrDefaultAsync(m => m.Missioncode == id);
-            if (mission == null)
-            {
-                return NotFound();
-            }
-
-            return View(mission);
-        }
-
-        // GET: Missions/Create
-        public IActionResult Create()
-        {
+            ViewBag.Personnel = await _context.Personnel
+                .Select(p => new SelectListItem { Value = p.Personnelid.ToString(), Text = $"{p.Name} ({p.Rank})" })
+                .ToListAsync();
             return View();
         }
 
-        // POST: Missions/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Missioncode,Missiondate")] Mission mission)
         {
             if (ModelState.IsValid)
             {
+                mission.ConvertToUtc();
                 _context.Add(mission);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
+            ViewBag.Personnel = await _context.Personnel
+                .Select(p => new SelectListItem { Value = p.Personnelid.ToString(), Text = $"{p.Name} ({p.Rank})" })
+                .ToListAsync();
             return View(mission);
         }
 
-        // GET: Missions/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -68,15 +55,29 @@ namespace MyMvcApp.Controllers
                 return NotFound();
             }
 
-            var mission = await _context.Mission.FindAsync(id);
+            var mission = await _context.Mission
+                .Include(m => m.Personnel)
+                .FirstOrDefaultAsync(m => m.Missioncode == id);
+
             if (mission == null)
             {
                 return NotFound();
             }
+
+            // Get all personnel and create SelectListItems
+            var allPersonnel = await _context.Personnel.ToListAsync();
+            var selectedPersonnelIds = mission.Personnel.Select(p => p.Personnelid).ToList();
+
+            ViewBag.Personnel = allPersonnel.Select(p => new SelectListItem 
+            { 
+                Value = p.Personnelid.ToString(), 
+                Text = $"{p.Name} ({p.Rank})",
+                Selected = selectedPersonnelIds.Contains(p.Personnelid)
+            }).ToList();
+
             return View(mission);
         }
 
-        // POST: Missions/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("Missioncode,Missiondate")] Mission mission)
@@ -90,8 +91,10 @@ namespace MyMvcApp.Controllers
             {
                 try
                 {
+                    mission.ConvertToUtc();
                     _context.Update(mission);
                     await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -104,13 +107,15 @@ namespace MyMvcApp.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
             }
+
+            ViewBag.Personnel = await _context.Personnel
+                .Select(p => new SelectListItem { Value = p.Personnelid.ToString(), Text = $"{p.Name} ({p.Rank})" })
+                .ToListAsync();
             return View(mission);
         }
 
-        // GET: Missions/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Details(string id)
         {
             if (id == null)
             {
@@ -118,7 +123,9 @@ namespace MyMvcApp.Controllers
             }
 
             var mission = await _context.Mission
+                .Include(m => m.Personnel)
                 .FirstOrDefaultAsync(m => m.Missioncode == id);
+
             if (mission == null)
             {
                 return NotFound();
@@ -127,18 +134,40 @@ namespace MyMvcApp.Controllers
             return View(mission);
         }
 
-        // POST: Missions/Delete/5
+        public async Task<IActionResult> Delete(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var mission = await _context.Mission
+                .Include(m => m.Personnel)
+                .FirstOrDefaultAsync(m => m.Missioncode == id);
+
+            if (mission == null)
+            {
+                return NotFound();
+            }
+
+            return View(mission);
+        }
+
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var mission = await _context.Mission.FindAsync(id);
+            var mission = await _context.Mission
+                .Include(m => m.Personnel)
+                .FirstOrDefaultAsync(m => m.Missioncode == id);
+
             if (mission != null)
             {
+                mission.Personnel.Clear(); // Clear the many-to-many relationships
                 _context.Mission.Remove(mission);
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 

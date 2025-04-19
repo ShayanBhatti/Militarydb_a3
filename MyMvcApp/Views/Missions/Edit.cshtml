@@ -16,19 +16,12 @@
             <div class="mb-3">
                 <label asp-for="Missioncode" class="form-label">Mission Code</label>
                 <input asp-for="Missioncode" class="form-control" readonly />
-                <span asp-validation-for="Missioncode" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
                 <label asp-for="Missiondate" class="form-label">Mission Date</label>
                 <input asp-for="Missiondate" class="form-control" type="date" />
                 <span asp-validation-for="Missiondate" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Assigned Personnel</label>
-                <select asp-for="Personnel" asp-items="ViewBag.Personnel" class="form-select" multiple>
-                </select>
             </div>
 
             <div class="mt-4">
@@ -41,12 +34,4 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <script>
-        $(document).ready(function() {
-            $('select').select2({
-                placeholder: "Select personnel to assign",
-                allowClear: true
-            });
-        });
-    </script>
 }

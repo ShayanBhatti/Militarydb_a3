@@ -24,12 +24,6 @@
                 <span asp-validation-for="Missiondate" class="text-danger"></span>
             </div>
 
-            <div class="mb-3">
-                <label class="form-label">Assign Personnel</label>
-                <select asp-items="ViewBag.Personnel" class="form-select" multiple>
-                </select>
-            </div>
-
             <div class="mt-4">
                 <button type="submit" class="btn btn-primary">Create</button>
                 <a asp-action="Index" class="btn btn-secondary">Back to List</a>
