@@ -1,8 +1,77 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model DashboardViewModel
+@{
+    ViewData["Title"] = "Military Database Dashboard";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Military Database Management</h1>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-3">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-header">Total Personnel</div>
+            <div class="card-body">
+                <h5 class="card-title">@Model.TotalPersonnel</h5>
+                <p class="card-text">Active: @Model.ActivePersonnel</p>
+                <a href="@Url.Action("Index", "Personnel")" class="btn btn-light">View All</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-header">Military Units</div>
+            <div class="card-body">
+                <h5 class="card-title">@Model.TotalUnits</h5>
+                <p class="card-text">Active Units</p>
+                <a href="@Url.Action("Index", "Units")" class="btn btn-light">View All</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="card text-white bg-info mb-3">
+            <div class="card-header">Total Missions</div>
+            <div class="card-body">
+                <h5 class="card-title">@Model.TotalMissions</h5>
+                <p class="card-text">Mission Records</p>
+                <a href="@Url.Action("Index", "Missions")" class="btn btn-light">View All</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Recent Missions
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Mission Code</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var mission in Model.RecentMissions)
+                        {
+                            <tr>
+                                <td>@mission.Missioncode</td>
+                                <td>@mission.Missiondate?.ToString("d")</td>
+                                <td>
+                                    <a href="@Url.Action("Details", "Missions", new { id = mission.Missioncode })" 
+                                       class="btn btn-sm btn-info">Details</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>

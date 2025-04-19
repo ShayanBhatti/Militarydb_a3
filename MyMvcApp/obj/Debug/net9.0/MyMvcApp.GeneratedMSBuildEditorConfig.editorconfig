@@ -36,12 +36,72 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Missions/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzc2lvbnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Missions/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzc2lvbnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Missions/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzc2lvbnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Missions/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzc2lvbnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Missions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzc2lvbnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Personnel/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29ubmVsXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Personnel/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29ubmVsXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Personnel/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29ubmVsXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Personnel/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29ubmVsXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Personnel/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29ubmVsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Units/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Units/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Units/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Units/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Units/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/_ViewImports.cshtml]

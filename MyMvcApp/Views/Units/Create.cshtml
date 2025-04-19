@@ -1,0 +1,37 @@
+@model MyMvcApp.Models.Unit
+
+@{
+    ViewData["Title"] = "Create Unit";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3>Create New Unit</h3>
+    </div>
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="Unitname" class="form-label">Unit Name</label>
+                <input asp-for="Unitname" class="form-control" />
+                <span asp-validation-for="Unitname" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Unitlocation" class="form-label">Location</label>
+                <input asp-for="Unitlocation" class="form-control" />
+                <span asp-validation-for="Unitlocation" class="text-danger"></span>
+            </div>
+
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

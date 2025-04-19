@@ -1,0 +1,48 @@
+@model IEnumerable<MyMvcApp.Models.Personnel>
+
+@{
+    ViewData["Title"] = "Personnel List";
+}
+
+<h1>Military Personnel</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add New Personnel</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Rank</th>
+            <th>Unit</th>
+            <th>Status</th>
+            <th>Blood Group</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>@item.Personnelid</td>
+            <td>@item.Name</td>
+            <td>@item.Rank</td>
+            <td>@item.Unitname</td>
+            <td>
+                <span class="badge bg-@(item.Dutystatus == "Active" ? "success" : "secondary")">
+                    @item.Dutystatus
+                </span>
+            </td>
+            <td>@item.Bloodgroup</td>
+            <td>
+                <div class="btn-group">
+                    <a asp-action="Edit" asp-route-id="@item.Personnelid" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Personnelid" class="btn btn-info btn-sm">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Personnelid" class="btn btn-danger btn-sm">Delete</a>
+                </div>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

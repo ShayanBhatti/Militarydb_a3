@@ -1,0 +1,56 @@
+@model MyMvcApp.Models.Mission
+
+@{
+    ViewData["Title"] = "Mission Details";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3>Mission Details</h3>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Mission Code</dt>
+            <dd class="col-sm-9">@Model.Missioncode</dd>
+
+            <dt class="col-sm-3">Mission Date</dt>
+            <dd class="col-sm-9">@Model.Missiondate?.ToString("d")</dd>
+        </dl>
+
+        @if (Model.Personnel?.Any() == true)
+        {
+            <h4 class="mt-4">Assigned Personnel</h4>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Rank</th>
+                        <th>Unit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var person in Model.Personnel)
+                    {
+                        <tr>
+                            <td>@person.Personnelid</td>
+                            <td>@person.Name</td>
+                            <td>@person.Rank</td>
+                            <td>@person.Unitname</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div class="alert alert-warning mt-4">
+                No personnel assigned to this mission.
+            </div>
+        }
+    </div>
+    <div class="card-footer">
+        <a asp-action="Edit" asp-route-id="@Model.Missioncode" class="btn btn-warning">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>

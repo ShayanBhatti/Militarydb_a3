@@ -1,0 +1,36 @@
+@model MyMvcApp.Models.Mission
+
+@{
+    ViewData["Title"] = "Delete Mission";
+}
+
+<div class="card">
+    <div class="card-header bg-danger text-white">
+        <h3>Delete Mission</h3>
+    </div>
+    <div class="card-body">
+        <h4>Are you sure you want to delete this mission?</h4>
+        
+        <dl class="row mt-4">
+            <dt class="col-sm-3">Mission Code</dt>
+            <dd class="col-sm-9">@Model.Missioncode</dd>
+
+            <dt class="col-sm-3">Mission Date</dt>
+            <dd class="col-sm-9">@Model.Missiondate?.ToString("d")</dd>
+        </dl>
+
+        @if (Model.Personnel?.Any() == true)
+        {
+            <div class="alert alert-warning">
+                <strong>Warning!</strong> This mission has @Model.Personnel.Count assigned personnel.
+                Deleting this mission will remove these assignments.
+            </div>
+        }
+
+        <form asp-action="Delete" class="mt-4">
+            <input type="hidden" asp-for="Missioncode" />
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>

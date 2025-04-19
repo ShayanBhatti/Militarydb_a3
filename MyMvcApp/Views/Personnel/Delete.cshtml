@@ -1,0 +1,44 @@
+@model MyMvcApp.Models.Personnel
+
+@{
+    ViewData["Title"] = "Delete Personnel";
+}
+
+<div class="card">
+    <div class="card-header bg-danger text-white">
+        <h3>Delete Personnel</h3>
+    </div>
+    <div class="card-body">
+        <h4>Are you sure you want to delete this personnel record?</h4>
+        
+        <dl class="row mt-4">
+            <dt class="col-sm-3">Name</dt>
+            <dd class="col-sm-9">@Model.Name</dd>
+
+            <dt class="col-sm-3">Rank</dt>
+            <dd class="col-sm-9">@Model.Rank</dd>
+
+            <dt class="col-sm-3">Unit</dt>
+            <dd class="col-sm-9">@Model.Unitname</dd>
+
+            <dt class="col-sm-3">Status</dt>
+            <dd class="col-sm-9">@Model.Dutystatus</dd>
+        </dl>
+
+        @if (Model.Missioncodes?.Any() == true)
+        {
+            <div class="alert alert-warning">
+                <strong>Warning!</strong> This personnel is assigned to @Model.Missioncodes.Count mission(s).
+                Deleting this record will remove them from these missions.
+            </div>
+        }
+
+        <form asp-action="Delete" class="mt-4">
+            <input type="hidden" asp-for="Personnelid" />
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </form>
+
+
+</div>    </div>    </div>
+</div>

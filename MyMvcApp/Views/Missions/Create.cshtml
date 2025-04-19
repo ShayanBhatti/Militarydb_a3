@@ -1,0 +1,43 @@
+@model MyMvcApp.Models.Mission
+
+@{
+    ViewData["Title"] = "Create Mission";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3>Create New Mission</h3>
+    </div>
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="Missioncode" class="form-label">Mission Code</label>
+                <input asp-for="Missioncode" class="form-control" />
+                <span asp-validation-for="Missioncode" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Missiondate" class="form-label">Mission Date</label>
+                <input asp-for="Missiondate" class="form-control" type="date" />
+                <span asp-validation-for="Missiondate" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Assign Personnel</label>
+                <select asp-items="ViewBag.Personnel" class="form-select" multiple>
+                </select>
+            </div>
+
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

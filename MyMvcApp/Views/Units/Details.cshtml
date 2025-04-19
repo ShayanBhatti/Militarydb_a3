@@ -1,0 +1,56 @@
+@model MyMvcApp.Models.Unit
+
+@{
+    ViewData["Title"] = "Unit Details";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3>Unit Details</h3>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Unit Name</dt>
+            <dd class="col-sm-9">@Model.Unitname</dd>
+
+            <dt class="col-sm-3">Location</dt>
+            <dd class="col-sm-9">@Model.Unitlocation</dd>
+        </dl>
+
+        @if (Model.Personnel?.Any() == true)
+        {
+            <h4 class="mt-4">Assigned Personnel</h4>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Rank</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var person in Model.Personnel)
+                    {
+                        <tr>
+                            <td>@person.Personnelid</td>
+                            <td>@person.Name</td>
+                            <td>@person.Rank</td>
+                            <td>@person.Dutystatus</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div class="alert alert-info mt-4">
+                No personnel assigned to this unit.
+            </div>
+        }
+    </div>
+    <div class="card-footer">
+        <a asp-action="Edit" asp-route-id="@Model.Unitname" class="btn btn-warning">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
