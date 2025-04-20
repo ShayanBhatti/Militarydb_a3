@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shaya\\OneDrive\\Desktop\\Angular Learning\\Militarydb_a3\\MyMvcApp\\MyMvcApp.csproj": {}
+    "/workspaces/Militarydb_a3/MyMvcApp/MyMvcApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shaya\\OneDrive\\Desktop\\Angular Learning\\Militarydb_a3\\MyMvcApp\\MyMvcApp.csproj": {
+    "/workspaces/Militarydb_a3/MyMvcApp/MyMvcApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shaya\\OneDrive\\Desktop\\Angular Learning\\Militarydb_a3\\MyMvcApp\\MyMvcApp.csproj",
+        "projectUniqueName": "/workspaces/Militarydb_a3/MyMvcApp/MyMvcApp.csproj",
         "projectName": "MyMvcApp",
-        "projectPath": "C:\\Users\\shaya\\OneDrive\\Desktop\\Angular Learning\\Militarydb_a3\\MyMvcApp\\MyMvcApp.csproj",
-        "packagesPath": "C:\\Users\\shaya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shaya\\OneDrive\\Desktop\\Angular Learning\\Militarydb_a3\\MyMvcApp\\obj\\",
+        "projectPath": "/workspaces/Militarydb_a3/MyMvcApp/MyMvcApp.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/Militarydb_a3/MyMvcApp/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\shaya\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -95,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.407/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

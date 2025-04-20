@@ -17,99 +17,99 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MyMvcApp
 build_property.RootNamespace = MyMvcApp
-build_property.ProjectDir = C:\Users\shaya\OneDrive\Desktop\Angular Learning\Militarydb_a3\MyMvcApp\
+build_property.ProjectDir = /workspaces/Militarydb_a3/MyMvcApp/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\shaya\OneDrive\Desktop\Angular Learning\Militarydb_a3\MyMvcApp
+build_property.MSBuildProjectDirectory = /workspaces/Militarydb_a3/MyMvcApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Missions/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzc2lvbnNcQ3JlYXRlLmNzaHRtbA==
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Missions/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWlzc2lvbnMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Missions/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzc2lvbnNcRGVsZXRlLmNzaHRtbA==
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Missions/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWlzc2lvbnMvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Missions/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzc2lvbnNcRGV0YWlscy5jc2h0bWw=
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Missions/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWlzc2lvbnMvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Missions/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzc2lvbnNcRWRpdC5jc2h0bWw=
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Missions/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWlzc2lvbnMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Missions/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzc2lvbnNcSW5kZXguY3NodG1s
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Missions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWlzc2lvbnMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Personnel/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29ubmVsXENyZWF0ZS5jc2h0bWw=
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Personnel/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29ubmVsL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Personnel/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29ubmVsXERlbGV0ZS5jc2h0bWw=
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Personnel/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29ubmVsL0RlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Personnel/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29ubmVsXERldGFpbHMuY3NodG1s
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Personnel/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29ubmVsL0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Personnel/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29ubmVsXEVkaXQuY3NodG1s
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Personnel/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29ubmVsL0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Personnel/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29ubmVsXEluZGV4LmNzaHRtbA==
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Personnel/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29ubmVsL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Units/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdHNcQ3JlYXRlLmNzaHRtbA==
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Units/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVW5pdHMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Units/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdHNcRGVsZXRlLmNzaHRtbA==
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Units/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVW5pdHMvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Units/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdHNcRGV0YWlscy5jc2h0bWw=
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Units/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVW5pdHMvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Units/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdHNcRWRpdC5jc2h0bWw=
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Units/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVW5pdHMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Units/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdHNcSW5kZXguY3NodG1s
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Units/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVW5pdHMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/workspaces/Militarydb_a3/MyMvcApp/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[/workspaces/Militarydb_a3/MyMvcApp/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shaya/OneDrive/Desktop/Angular Learning/Militarydb_a3/MyMvcApp/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-ujr1yed5n4
+[/workspaces/Militarydb_a3/MyMvcApp/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-xlfqnswz7s
