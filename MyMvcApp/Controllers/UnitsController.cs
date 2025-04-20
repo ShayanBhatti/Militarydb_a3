@@ -122,6 +122,25 @@ namespace MyMvcApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> Details(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return NotFound();
+            }
+
+            var unit = await _context.Units
+                .Include(u => u.Personnel)
+                .FirstOrDefaultAsync(u => u.Unitname == id);
+
+            if (unit == null)
+            {
+                return NotFound();
+            }
+
+            return View(unit);
+        }
+
         private bool UnitExists(string id)
         {
             return _context.Units.Any(e => e.Unitname == id);

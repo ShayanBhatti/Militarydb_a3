@@ -9,7 +9,7 @@
         <h3>Unit Details</h3>
     </div>
     <div class="card-body">
-        <dl class="row">
+        <dl class="row mb-4">
             <dt class="col-sm-3">Unit Name</dt>
             <dd class="col-sm-9">@Model.Unitname</dd>
 
@@ -17,26 +17,26 @@
             <dd class="col-sm-9">@Model.Unitlocation</dd>
         </dl>
 
-        @if (Model.Personnel?.Any() == true)
+        <h4 class="mb-3">Personnel in Unit</h4>
+        @if (Model.Personnel != null && Model.Personnel.Any())
         {
-            <h4 class="mt-4">Assigned Personnel</h4>
-            <table class="table table-sm">
+            <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Name</th>
                         <th>Rank</th>
-                        <th>Status</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var person in Model.Personnel)
                     {
                         <tr>
-                            <td>@person.Personnelid</td>
                             <td>@person.Name</td>
                             <td>@person.Rank</td>
-                            <td>@person.Dutystatus</td>
+                            <td>
+                                <a asp-controller="Personnel" asp-action="Details" asp-route-id="@person.Personnelid" class="btn btn-info btn-sm">Details</a>
+                            </td>
                         </tr>
                     }
                 </tbody>
@@ -44,9 +44,7 @@
         }
         else
         {
-            <div class="alert alert-info mt-4">
-                No personnel assigned to this unit.
-            </div>
+            <p class="text-muted">No personnel assigned to this unit.</p>
         }
     </div>
     <div class="card-footer">
