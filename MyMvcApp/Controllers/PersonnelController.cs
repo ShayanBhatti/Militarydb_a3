@@ -26,33 +26,37 @@ namespace MyMvcApp.Controllers
         // GET: Personnel/Create
         public async Task<IActionResult> Create()
         {
-            ViewBag.Units = await _context.Units
-                .Select(u => new SelectListItem { Value = u.Unitname, Text = u.Unitname })
-                .ToListAsync();
+            ViewBag.Units = await GetUnitsListAsync();
             return View();
         }
 
         // POST: Personnel/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Rank,Unitname,Contactnumber,Email,Joiningdate,Emergencycontact,Bloodgroup,Weaponassigned,Dutystatus")] Personnel personnel)
+        public async Task<IActionResult> Create([Bind("Personnelid,Name,Rank,Unitname,Contactnumber,Email,Joiningdate,Emergencycontact,Bloodgroup,Weaponassigned,Dutystatus")] Personnel personnel)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    // Ensure UTC date
+                    // Check if ID already exists
+                    if (await _context.Personnel.AnyAsync(p => p.Personnelid == personnel.Personnelid))
+                    {
+                        ModelState.AddModelError("Personnelid", "This Personnel ID is already in use.");
+                        ViewBag.Units = await GetUnitsListAsync();
+                        return View(personnel);
+                    }
+
+                    // Set default values and UTC date
                     personnel.Joiningdate = personnel.Joiningdate.HasValue 
                         ? DateTime.SpecifyKind(personnel.Joiningdate.Value, DateTimeKind.Utc)
                         : DateTime.UtcNow;
-
-                    // Set default values for non-required fields
-                    personnel.Dutystatus = string.IsNullOrEmpty(personnel.Dutystatus) ? "Active" : personnel.Dutystatus;
+                    
+                    personnel.Dutystatus ??= "Active";
                     personnel.Bloodgroup ??= "";
                     personnel.Weaponassigned ??= "";
                     personnel.Emergencycontact ??= "";
 
-                    // Important: Do not set Personnelid - let the database generate it
                     _context.Personnel.Add(personnel);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
@@ -60,34 +64,10 @@ namespace MyMvcApp.Controllers
             }
             catch (DbUpdateException ex)
             {
-                var innerException = ex.InnerException?.Message ?? ex.Message;
-                if (innerException.Contains("duplicate key"))
-                {
-                    // Check if it's an email duplicate
-                    if (innerException.Contains("email"))
-                    {
-                        ModelState.AddModelError("Email", "This email address is already registered.");
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", "A record with this information already exists.");
-                    }
-                }
-                else
-                {
-                    ModelState.AddModelError("", $"Database error: {innerException}");
-                }
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError("", $"An unexpected error occurred: {ex.Message}");
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
             }
 
-            // If we got this far, something failed
-            ViewBag.Units = await _context.Units
-                .Select(u => new SelectListItem { Value = u.Unitname, Text = u.Unitname })
-                .ToListAsync();
-
+            ViewBag.Units = await GetUnitsListAsync();
             return View(personnel);
         }
 
@@ -245,6 +225,20 @@ namespace MyMvcApp.Controllers
                 ModelState.AddModelError("", "Unable to delete personnel. They may be assigned to missions.");
                 return View(personnel);
             }
+        }
+
+        [HttpGet]
+        public async Task<JsonResult> CheckIdExists(int id)
+        {
+            var exists = await _context.Personnel.AnyAsync(p => p.Personnelid == id);
+            return Json(exists);
+        }
+
+        private async Task<List<SelectListItem>> GetUnitsListAsync()
+        {
+            return await _context.Units
+                .Select(u => new SelectListItem { Value = u.Unitname, Text = u.Unitname })
+                .ToListAsync();
         }
 
         private bool PersonnelExists(int id)

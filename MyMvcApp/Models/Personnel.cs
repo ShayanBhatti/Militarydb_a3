@@ -8,6 +8,9 @@ namespace MyMvcApp.Models
     [Table("personnel")]
     public class Personnel
     {
+        [Required(ErrorMessage = "Personnel ID is required")]
+        [Display(Name = "Personnel ID")]
+        [Range(1000, 9999, ErrorMessage = "Personnel ID must be between 1000 and 9999")]
         [Key]
         [Column("personnelid")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
