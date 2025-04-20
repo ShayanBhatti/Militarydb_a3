@@ -4,45 +4,55 @@
     ViewData["Title"] = "Personnel List";
 }
 
-<h1>Military Personnel</h1>
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h3>Military Personnel</h3>
+        <a asp-action="Create" class="btn btn-primary">Add New Personnel</a>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Rank</th>
+                    <th>Unit</th>
+                    <th>Contact</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Personnelid</td>
+                        <td>@item.Name</td>
+                        <td>@item.Rank</td>
+                        <td>@item.Unitname</td>
+                        <td>@item.Contactnumber</td>
+                        <td>@item.Email</td>
+                        <td>
+                            <div class="btn-group">
+                                <a asp-action="Edit" asp-route-id="@item.Personnelid" class="btn btn-warning btn-sm">Edit</a>
+                                <a asp-action="Details" asp-route-id="@item.Personnelid" class="btn btn-info btn-sm">Details</a>
+                                <a asp-action="Delete" asp-route-id="@item.Personnelid" class="btn btn-danger btn-sm">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
 
-<p>
-    <a asp-action="Create" class="btn btn-primary">Add New Personnel</a>
-</p>
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('.table').DataTable();
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Rank</th>
-            <th>Unit</th>
-            <th>Status</th>
-            <th>Blood Group</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach (var item in Model) {
-        <tr>
-            <td>@item.Personnelid</td>
-            <td>@item.Name</td>
-            <td>@item.Rank</td>
-            <td>@item.Unitname</td>
-            <td>
-                <span class="badge bg-@(item.Dutystatus == "Active" ? "success" : "secondary")">
-                    @item.Dutystatus
-                </span>
-            </td>
-            <td>@item.Bloodgroup</td>
-            <td>
-                <div class="btn-group">
-                    <a asp-action="Edit" asp-route-id="@item.Personnelid" class="btn btn-warning btn-sm">Edit</a>
-                    <a asp-action="Details" asp-route-id="@item.Personnelid" class="btn btn-info btn-sm">Details</a>
-                    <a asp-action="Delete" asp-route-id="@item.Personnelid" class="btn btn-danger btn-sm">Delete</a>
-                </div>
-            </td>
-        </tr>
-    }
-    </tbody>
-</table>
+
+
+}    </script>        });        });
+    </script>
+}

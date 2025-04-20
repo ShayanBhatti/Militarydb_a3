@@ -10,9 +10,6 @@
     </div>
     <div class="card-body">
         <dl class="row">
-            <dt class="col-sm-3">ID</dt>
-            <dd class="col-sm-9">@Model.Personnelid</dd>
-
             <dt class="col-sm-3">Name</dt>
             <dd class="col-sm-9">@Model.Name</dd>
 
@@ -22,53 +19,27 @@
             <dt class="col-sm-3">Unit</dt>
             <dd class="col-sm-9">@Model.Unitname</dd>
 
-            <dt class="col-sm-3">Contact</dt>
+            <dt class="col-sm-3">Contact Number</dt>
             <dd class="col-sm-9">@Model.Contactnumber</dd>
 
             <dt class="col-sm-3">Email</dt>
             <dd class="col-sm-9">@Model.Email</dd>
 
             <dt class="col-sm-3">Joining Date</dt>
-            <dd class="col-sm-9">@Model.Joiningdate?.ToString("d")</dd>
+            <dd class="col-sm-9">@(Model.Joiningdate?.ToString("d") ?? "Not specified")</dd>
 
             <dt class="col-sm-3">Emergency Contact</dt>
-            <dd class="col-sm-9">@Model.Emergencycontact</dd>
+            <dd class="col-sm-9">@(Model.Emergencycontact ?? "Not specified")</dd>
 
             <dt class="col-sm-3">Blood Group</dt>
-            <dd class="col-sm-9">@Model.Bloodgroup</dd>
+            <dd class="col-sm-9">@(Model.Bloodgroup ?? "Not specified")</dd>
 
             <dt class="col-sm-3">Weapon Assigned</dt>
-            <dd class="col-sm-9">@Model.Weaponassigned</dd>
+            <dd class="col-sm-9">@(Model.Weaponassigned ?? "Not specified")</dd>
 
             <dt class="col-sm-3">Duty Status</dt>
-            <dd class="col-sm-9">
-                <span class="badge bg-@(Model.Dutystatus == "Active" ? "success" : "secondary")">
-                    @Model.Dutystatus
-                </span>
-            </dd>
+            <dd class="col-sm-9">@Model.Dutystatus</dd>
         </dl>
-
-        @if (Model.Missioncodes?.Any() == true)
-        {
-            <h4>Assigned Missions</h4>
-            <table class="table table-sm">
-                <thead>
-                    <tr>
-                        <th>Mission Code</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var mission in Model.Missioncodes)
-                    {
-                        <tr>
-                            <td>@mission.Missioncode</td>
-                            <td>@mission.Missiondate?.ToString("d")</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        }
     </div>
     <div class="card-footer">
         <a asp-action="Edit" asp-route-id="@Model.Personnelid" class="btn btn-warning">Edit</a>

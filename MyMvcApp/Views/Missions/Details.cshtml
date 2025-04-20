@@ -6,51 +6,75 @@
 
 <div class="card">
     <div class="card-header">
-        <h3>Mission Details</h3>
+        <div class="d-flex justify-content-between align-items-center">
+            <h3>Mission Details</h3>
+            <div>
+                <a asp-action="Edit" asp-route-id="@Model.Missioncode" class="btn btn-warning">Edit</a>
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </div>
     </div>
     <div class="card-body">
-        <dl class="row">
-            <dt class="col-sm-3">Mission Code</dt>
-            <dd class="col-sm-9">@Model.Missioncode</dd>
+        <div class="row">
+            <div class="col-md-6">
+                <dl class="row">
+                    <dt class="col-sm-4">Mission Code</dt>
+                    <dd class="col-sm-8">@Model.Missioncode</dd>
 
-            <dt class="col-sm-3">Mission Date</dt>
-            <dd class="col-sm-9">@Model.Missiondate?.ToString("d")</dd>
-        </dl>
-
-        @if (Model.Personnel?.Any() == true)
-        {
-            <h4 class="mt-4">Assigned Personnel</h4>
-            <table class="table table-sm">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Rank</th>
-                        <th>Unit</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var person in Model.Personnel)
-                    {
-                        <tr>
-                            <td>@person.Personnelid</td>
-                            <td>@person.Name</td>
-                            <td>@person.Rank</td>
-                            <td>@person.Unitname</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        }
-        else
-        {
-            <div class="alert alert-info mt-4">
-                No personnel assigned to this mission.
+                    <dt class="col-sm-4">Mission Date</dt>
+                    <dd class="col-sm-8">@Model.Missiondate?.ToLocalTime().ToString("MMM dd, yyyy")</dd>
+                </dl>
             </div>
-        }
-    </div>
-    <div class="card-footer">
-        <a asp-action="Edit" asp-route-id="@Model.Missioncode" class="btn btn-warning">Edit</a>
-        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <h4>Assigned Personnel</h4>
+                @if (Model.Personnel?.Any() == true)
+                {
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Rank</th>
+                                <th>Unit</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var person in Model.Personnel)
+                            {
+                                <tr>
+                                    <td>@person.Personnelid</td>
+                                    <td>@person.Name</td>
+                                    <td>@person.Rank</td>
+                                    <td>@person.Unitname</td>
+                                    <td>
+                                        <span class="badge bg-@(person.Dutystatus == "Active" ? "success" : "secondary")">
+                                            @person.Dutystatus
+                                        </span>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <div class="alert alert-info">
+                        No personnel assigned to this mission.
+                    </div>
+                }
+            </div>
+        </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('.table').DataTable();
+        });
+    </script>
+}

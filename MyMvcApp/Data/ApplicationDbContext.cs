@@ -18,6 +18,8 @@ public partial class ApplicationDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+
         modelBuilder.Entity<Mission>(entity =>
         {
             entity.HasKey(e => e.Missioncode).HasName("mission_pkey");
@@ -32,9 +34,8 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<Personnel>(entity =>
         {
-            entity.HasKey(e => e.Personnelid).HasName("personnel_pkey");
-
             entity.ToTable("personnel");
+            entity.HasKey(e => e.Personnelid);
 
             entity.Property(e => e.Personnelid)
                 .ValueGeneratedNever()
@@ -43,12 +44,14 @@ public partial class ApplicationDbContext : DbContext
                 .HasMaxLength(5)
                 .HasColumnName("bloodgroup");
             entity.Property(e => e.Contactnumber)
+                .IsRequired()
                 .HasMaxLength(50)
                 .HasColumnName("contactnumber");
             entity.Property(e => e.Dutystatus)
                 .HasMaxLength(50)
                 .HasColumnName("dutystatus");
             entity.Property(e => e.Email)
+                .IsRequired()
                 .HasMaxLength(100)
                 .HasColumnName("email");
             entity.Property(e => e.Emergencycontact)
@@ -56,20 +59,25 @@ public partial class ApplicationDbContext : DbContext
                 .HasColumnName("emergencycontact");
             entity.Property(e => e.Joiningdate).HasColumnName("joiningdate");
             entity.Property(e => e.Name)
+                .IsRequired()
                 .HasMaxLength(100)
                 .HasColumnName("name");
             entity.Property(e => e.Rank)
+                .IsRequired()
                 .HasMaxLength(50)
                 .HasColumnName("rank");
             entity.Property(e => e.Unitname)
+                .IsRequired()
                 .HasMaxLength(100)
                 .HasColumnName("unitname");
             entity.Property(e => e.Weaponassigned)
                 .HasMaxLength(50)
                 .HasColumnName("weaponassigned");
 
-            entity.HasOne(d => d.UnitnameNavigation).WithMany(p => p.Personnel)
+            entity.HasOne(d => d.UnitnameNavigation)
+                .WithMany(p => p.Personnel)
                 .HasForeignKey(d => d.Unitname)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("personnel_unitname_fkey");
 
             entity.HasMany(d => d.Missioncodes).WithMany(p => p.Personnel)
